@@ -1,0 +1,174 @@
+h1 {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 50px;
+}
+.table-sortable {
+  margin-left: auto;
+  margin-right: auto;
+}
+.centertxt {
+  text-align: center;
+}
+.navbar {
+  color: #232323;
+}
+.trtxt {
+  color: #ffffff00;
+}
+.id {
+  width: 35px;
+}
+.lname {
+  width: 350px;
+}
+.hex {
+  width: 75px;
+}
+.year {
+  width: 40px;
+}
+
+.size1 {
+  font-size: 50%;
+  width: 21px;
+  height: 21px;
+}
+
+.trans {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0%,
+    #fff 1px,
+    transparent 0% 5px,
+    #fff 1px
+  );
+  background-repeat: repeat;
+}
+.glitter {
+  background-image: radial-gradient(#ffffff 20%, transparent 20%),
+    radial-gradient(#fafafa 20%, transparent 20%);
+
+  background-position: 0 0, 30px 30px;
+  background-size: 8px 8px;
+}
+
+.satin {
+  width: 24px;
+  aspect-ratio: 1;
+  background-image: linear-gradient(transparent 50%, #00000050);
+  position: relative;
+  z-index: 0;
+}
+
+.satin:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: inherit; /* use the same gradient */
+  transform: rotate(-90deg); /* rotate it */
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    0 100%
+  ); /* show only half of the element */
+}
+.satin:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(#00000050, transparent 50%);
+  transform: rotate(90deg); /* rotate it */
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    0 100%
+  ); /* show only half of the element */
+}
+
+.satins {
+  /*background-image: linear-gradient(45deg, transparent 20%, #fff);
+    background-image: linear-gradient(to top right, black 0%, white 51%, black 51%, white 100%);
+    mask-image: linear-gradient(45deg, transparent 20%, #fff);
+    background-image: linear-gradient(45deg, transparent 20%, #fff);*/
+  background-image: conic-gradient(#fff 45deg, #000 215deg, #fff 270deg);
+}
+
+.pearl {
+  background-image: url("../img/swirl.png");
+}
+
+.chrome {
+  background-image: linear-gradient(360deg, transparent 50%, #fff);
+}
+
+.speckle {
+  background-image: radial-gradient(#000, transparent 20%),
+    radial-gradient(#000, transparent 20%);
+
+  background-position: 0 0, 30px 30px;
+  background-size: 8px 8px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  padding-bottom: 10px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.active,
+.btn:hover {
+  background-color: #666;
+  color: white;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+body {
+  background-image: url("../img/stud2.png");
+  background-size: 25px;
+  background-repeat: round;
+}
+
+table {
+  padding-top: 20px;
+  border: 1px solid;
+  border-collapse: collapse;
+  align-items: center;
+}
+
+th {
+  height: 21px;
+  border: 1px solid;
+  background-color: #ddd;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+td {
+  width: auto !important;
+  height: 21px;
+  border: 1px solid;
+  border-color: black;
+  padding-left: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+tbody tr:nth-child(even) {
+  background-color: #ddd;
+}
+tr:hover {
+  background-color: coral;
+}

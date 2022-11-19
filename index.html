@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=10; IE=9; IE=8; IE=7; IE=EDGE"
+    />
+    <link rel="icon" href="./img/icon.png" />
+    <title>qelement</title>
+    <link rel="stylesheet" href="./src/tablesort.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="./img/logo.png" />
+    </div>
+
+    <p class="centertxt">
+      This chart was made to help keep track of, and easily translate the names
+      of LEGO colors
+    </p>
+
+    <div class="centertxt" id="btnDiv">
+      <button
+        class="btn active"
+        id="unofficialNameButt"
+        onclick="UpdateTable(this.id)"
+      >
+        Unofficial names
+      </button>
+      <button class="btn" id="specialColorsButt" onclick="UpdateTable(this.id)">
+        Special Colors
+      </button>
+      <button class="btn" id="modulexButt" onclick="UpdateTable(this.id)">
+        Modulex
+      </button>
+      <button class="btn" id="modulexFoilButt" onclick="UpdateTable(this.id)">
+        Modulex Foil
+      </button>
+      <br />
+    </div>
+    <div class="box"></div>
+
+    <table class="table table-sortable">
+      <thead>
+        <tr>
+          <th class="size1">Col</th>
+          <th>Bricklink Name</th>
+          <th class="id">LEGO ID</th>
+          <th class="lname">LEGO Name</th>
+          <th>BrickOwl Name</th>
+          <th class="hex">Hex</th>
+          <th class="year">Produced</th>
+          <th class="year">Retired</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody id="main_table">
+        <tr>
+          <td bgcolor="#fff" class="trtxt">1</td>
+          <td>White</td>
+          <td>White</td>
+          <td>#FFFFFF</td>
+          <td>@</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="./src/data.js"></script>
+    <script src="./src/tablesort.js"></script>
+
+    <div class="centertxt">
+      <a href="#top">Go to the top of the page</a>
+    </div>
+  </body>
+</html>
