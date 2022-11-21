@@ -3,6 +3,16 @@ let showUnofficialNames = true;
 let showSpecialColors = true;
 let showModulexColors = true;
 let showModulexFoilColors = false;
+/*
+                 TO ADD NEW COLUMNS 
+---------------------------------------------------------
+
+              add new <th> to index.html
+
+   add ${tableRowData.var} to generateTableRow function
+
+add info in data.js if necessary (update ref in this file)
+*/
 
 function sortTableByColumn(table, column, asc = true) {
   const dirModifier = asc ? 1 : -1;
@@ -93,33 +103,27 @@ function UpdateTable(clicked_id) {
     showModulexFoilColors = false;
   }
 
-  //   showUnofficialNames = document.getElementById("unofficialNameButt").onclick; // set bool if box is checked or not
-  //   showSpecialColors = document.getElementById("unofficialColorCheck").checked; // ^ same
-
-  //   showModulexColors = document.getElementById("modulexButt").onclick; // ^ same
-  //   showModulexFoilColors = document.getElementById("modulexFoilColorCheck").checked; // ^ same
-  //   if (document.getElementById("modulexColorCheck").checked){
-  //     document.getElementById("mxFoilDiv").style.display = "block";
-  //   } else {
-  //     document.getElementById("mxFoilDiv").style.display = "none";
-  //   }
-
   let mainTable = document.getElementById("main_table");
 
   mainTable.innerHTML = generateHtmlTableString(colors);
 }
 
-// {
-//     "id": "1",
-//     "color": "FFFFFF",
-//     "name": "White",
-//     "parts": 13740,
-//     "inSets": 10286,
-//     "wanted": 20023,
-//     "forSale": 13832,
-//     "colorTimeline": "1949 - 2022",
-//     "type": "solid"
-// } <tr><td bgcolor=#fff class="trtxt">1</td><td>White</td><td>White</td><td>#FFFFFF</td><td>@</td></tr>
+//          object structure:               //
+//{
+//  id: "49",
+//  Lid: "103",
+//  swatchId: "2",
+//  color: "E8E8E8",
+//  BLName: "Very Light Gray",
+//  LName: "Light Grey",
+//  OName: "Very Light Gray",
+//  parts: "21",
+//  inSets: "23",
+//  type: "",
+//  colorTimeline: "1997-2004",
+//  flourescence: "",
+//  note: "",
+//}, <tr><td bgcolor=#fff class="trtxt">1</td><td>White</td><td>White</td><td>#FFFFFF</td><td>@</td></tr>
 
 function generateHtmlTableString(tableData) {
   let htmlString = "";
@@ -131,7 +135,6 @@ function generateHtmlTableString(tableData) {
 }
 
 function generateTableRow(tableRowData) {
-  //let value ="*";
   var cellPattern = "";
   var prod = tableRowData.colorTimeline.split("-")[0];
   var ret = tableRowData.colorTimeline.split("-")[1];
@@ -183,6 +186,7 @@ function generateTableRow(tableRowData) {
         <td class="alignRight id">${tableRowData.Lid}</td>
         <td class="lname">${nameToggleL}</td>
         <td>${nameToggleO}</td>
+        <td>${tableRowData.flourescence}</td>
         <td class="hex">#${tableRowData.color.toUpperCase()}</td>
         <td class="year">${prod}</td><td class="year">${ret}</td>
         <td>${tableRowData.note}</td>
@@ -191,13 +195,8 @@ function generateTableRow(tableRowData) {
 
 function hideCol() {
   var headers = document.getElementsByTagName("th");
-  //headers[0].innerHTML = '&#x2642;';
-  //var dateBool = document.getElementById("tableDates");
   var col = document.getElementById("txtCol").value;
 
-  //if(dateBool == "hide"){
-  //     col = 6;
-  //}
   if (isNaN(col) || col == "") {
     alert("Invalid Column");
     return;
@@ -210,9 +209,7 @@ function hideCol() {
       alert("Invalid Column");
       return;
     }
-    // if(headers[col].style.display == ""){
-    //   headers[col].style.display == "none"
-    //}
+
     for (var h = 0; h < headers.length; h++) {
       if (h == col) {
         headers[h].style.display = "none";
@@ -220,8 +217,7 @@ function hideCol() {
         headers[h].style.display = "";
       }
     }
-    //tbl.headers[col].style.display = "none";
-    //tbl.headerCell[col].style.display="none";
+
     for (var i = 0; i < tbl.rows.length; i++) {
       for (var j = 0; j < tbl.rows[i].cells.length; j++) {
         tbl.rows[i].cells[j].style.display = "";
