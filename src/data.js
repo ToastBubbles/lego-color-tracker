@@ -4282,7 +4282,7 @@ let extraColors = [
     OName: "",
     parts: "0",
     inSets: "0",
-    type: "Speckle",
+    type: "Other",
     colorTimeline: "2015-2015",
     flourescence: "",
     note: "special ABS with suspected fiberglass mixture",
