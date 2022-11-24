@@ -4285,7 +4285,7 @@ let extraColors = [
     type: "Speckle",
     colorTimeline: "2015-2015",
     flourescence: "",
-    note: "",
+    note: "special ABS with suspected fiberglass mixture",
   },
 
   {
